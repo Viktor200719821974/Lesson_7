@@ -340,14 +340,18 @@ function dayRutineSleep3(){
     });
 }
 async function dayRutineGo(){
-    const day = await dayRutine3('Monday');
-    await dayRutineBreakfast3();
-    await dayRutineTeeth3();
-    await dayRutineDressed3();
-    await dayRutineGo3();
-    await dayRutineWork3();
-    await dayRutineReturnGo3();
-    await dayRutineDinner3();
-    await dayRutineSleep3();
+    try {
+        const day = await dayRutine3('Saturday');
+        await dayRutineBreakfast3();
+        await dayRutineTeeth3();
+        await dayRutineDressed3();
+        await dayRutineGo3();
+        await dayRutineWork3();
+        await dayRutineReturnGo3();
+        await dayRutineDinner3();
+        await dayRutineSleep3();
+    } catch (e){
+        console.warn(e);
+    }
 }
 dayRutineGo();
